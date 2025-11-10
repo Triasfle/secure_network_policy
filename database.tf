@@ -7,10 +7,10 @@ resource "kubernetes_deployment" "database" {
       metadata { labels = { app = "database" } }
       spec {
         container {
-          name = "database"
+          name  = "database"
           image = "postgres:14"
           env {
-            name = "POSTGRES_PASSWORD"
+            name  = "POSTGRES_PASSWORD"
             value = "password"
           }
           port { container_port = 5432 }
@@ -25,8 +25,8 @@ resource "kubernetes_service" "database" {
   spec {
     selector = { app = "database" }
     port {
-        port = 5432
-        target_port = 5432
+      port        = 5432
+      target_port = 5432
     }
   }
 }
