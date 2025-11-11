@@ -1,4 +1,4 @@
-# 🔒 NetworkPolicy untuk FRONTEND
+# NetworkPolicy untuk Frontend
 # Hanya mengizinkan koneksi dari luar (public) ke frontend di port 8080
 resource "kubernetes_network_policy" "frontend_policy" {
   metadata {
@@ -23,7 +23,7 @@ resource "kubernetes_network_policy" "frontend_policy" {
   }
 }
 
-# 🔒 NetworkPolicy untuk BACKEND
+# NetworkPolicy untuk Backend
 # Hanya mengizinkan koneksi dari frontend ke backend di port 8080
 resource "kubernetes_network_policy" "backend_policy" {
   metadata {
@@ -56,7 +56,7 @@ resource "kubernetes_network_policy" "backend_policy" {
   }
 }
 
-# 🔒 NetworkPolicy untuk DATABASE
+# NetworkPolicy untuk Database
 # Hanya mengizinkan koneksi dari backend ke database di port 5432
 resource "kubernetes_network_policy" "database_policy" {
   metadata {
